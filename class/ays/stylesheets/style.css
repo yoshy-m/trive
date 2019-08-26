@@ -378,7 +378,11 @@ img{
 .mainVisual__img{
   width: 100%;
   height: 100vh;
-  background: url(../images/main.jpg) 60%;
+  background: url(../images/main.jpg) 80%;
+  background-size: cover;
+}
+.vol01 .mainVisual__img{
+  background: url(../vol01/images/main.jpg) 60%;
   background-size: cover;
 }
 .mainVisual__txtWrap{
@@ -387,6 +391,9 @@ img{
   top: 50%;
   left: 50%;
   transform: translate(-50%,-50%);
+}
+.mainVisual__txtWrap *{
+  text-shadow: 0 5px 20px rgba(255,255,255,.9)
 }
 .mainVisual__logo{
   width: 80%;
@@ -407,6 +414,31 @@ img{
   margin: 40px auto 0;
   background: rgba(255,255,255,.1);
 }
+.mainVisual__voiceWrap{
+  position: absolute;
+  left: 0;
+  bottom: 5%;
+  width: 95%;
+  padding: 5%;
+  background: rgba(255,255,255,.6);
+}
+.mainVisual__voice{
+  text-align: left;
+  font-weight: bold;
+  font-size: 1.6rem;
+}
+.mainVisual__name{
+  text-align: right;
+  font-weight: bold;
+}
+.mainVisual__name::before{
+  content: "";
+  display: inline-block;
+  width: 30%;
+  height: 1px;
+  background: #666;
+  margin-right: 8px;
+}
 .section{
   margin: 120px 0;
 }
@@ -423,6 +455,9 @@ img{
 }
 .details .heading{
   background: url(../images/ttl_details.svg) no-repeat center;
+}
+.voices .heading{
+  background: url(../images/ttl_voices.svg) no-repeat;
 }
 .facilitators .heading{
   background: url(../images/ttl_facilitators.svg) no-repeat;
@@ -544,6 +579,12 @@ img{
   border-top: 1px solid #dbdbdb;
   font-size: 1.2rem;
 }
+.program__date{
+  line-height: 1.8em;
+}
+.program__ttl{
+  margin-top: 8px;
+}
 .details__wrap{
   position: relative;
   margin: -24px 8px 0;
@@ -571,9 +612,35 @@ img{
   line-height: 2em;
   text-align: center;
 }
+.details__desc{
+  text-align: center;
+  margin: 16px 0 0;
+}
+.details__desc + .details__price{
+  margin-top: 0
+}
 .details__txt{
   margin-top: 24px;
   font-size: 1.2rem;
+}
+.voices{
+  margin: 120px 16px;
+}
+.voices__item{
+  margin-top: 40px;
+}
+.voices__item::after{
+  content: "";
+  display: block;
+  clear: both;
+}
+.voices__img{
+  width: 45%;
+  margin-right: 16px;
+  float: left;
+}
+.voices__name{
+  font-weight: bold;
 }
 .facilitators{
   padding-bottom: 120px;
@@ -675,6 +742,18 @@ img{
     width: 50%;
     background: none;
   }
+  .mainVisual__voiceWrap{
+    width: 60%;
+    padding: 3% 5%;
+  }
+  .mainVisual__voice{
+    font-size: 2rem;
+    line-height: 2em;
+  }
+  .mainVisual__name{
+    margin-top: 16px;
+    font-size: 1.6rem;
+  }
   .heading{
     height: 80px;
   }
@@ -768,6 +847,10 @@ img{
   .program__item:nth-child(n+4){
     margin-top: 64px;
   }
+  .program__item:nth-child(n+7){
+    width: 50%;
+    margin-top: 64px;
+  }
   .program__subtxtWrap{
     width: 70%;
     margin: 64px auto 0;
@@ -782,17 +865,45 @@ img{
     margin: -32% 0 0 5%;
     padding: 64px 40px;
   }
+  .voices{
+    margin: 160px 10%;
+  }
+  .voices__item:nth-child(n+2){
+    margin-top: 80px;
+  }
+  .voices__img{
+    width: 20%;
+    margin-right: 32px;
+  }
+  .voices__txtWrap{
+    overflow: auto;
+  }
+  .voices__name{
+    font-size: 1.8rem;
+    margin-bottom: 16px;
+  }
   .facilitators{
     padding-bottom: 0;
   }
   .facilitators .heading__wrap{
     margin-left: 10%;
   }
+  .voices .heading__wrap::after,
+  .facilitators .heading__wrap::after{
+    content: "";
+    display: block;
+    clear: both;
+  }
+  .voices .heading,
   .facilitators .heading{
     float: left;
-    width: 274px;
+    width: 150px;
     margin-right: 24px;
   }
+  .facilitators .heading{
+    width: 274px;
+  }
+  .voices .heading__txt,
   .facilitators .heading__txt{
     position: relative;
     top: 50px;
